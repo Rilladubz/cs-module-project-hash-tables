@@ -78,7 +78,7 @@ class HashTable:
         hash = 5381
         for c in key:
             hash = (hash << 5) + hash + ord(c)
-        return hash
+        return hash & 0xFFFFFFFF
 
     def hash_index(self, key):
         """
@@ -276,7 +276,7 @@ if __name__ == "__main__":
     old_capacity = ht.get_num_slots()
     ht.resize(ht.capacity * 2)
     new_capacity = ht.get_num_slots()
-    # print('LOAD FACTOR: ', ht.get_load_factor())
+
     print(f"\nResized from {old_capacity} to {new_capacity}.\n")
 
     # Test if data intact after resizing
