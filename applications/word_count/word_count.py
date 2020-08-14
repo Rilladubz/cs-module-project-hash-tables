@@ -3,17 +3,14 @@ def word_count(s):
 
     # If there are any white space this will remove them
     remove_white_space = " ".join(s.split())
-    # print("removed:", remove_white_space)
     # List of bad characters to ignore
     bad_chars = ['"', ':', '.', '-', '+', '=', '/', '\\',
                  '|', '[', ']', '{', '}', '(', ')', '*', '^', '&', ',', ';']
     # removes bad characters from string.
     updated_strings = ''.join(
         char for char in remove_white_space if not char in bad_chars)
-    # print("Updated Strings:", updated_strings)
     # creates a list of the updated strings
     words_list = updated_strings.split()
-    # print("LISTED:", words_list)
     words = {}
 
     for word in words_list:
